@@ -1,5 +1,27 @@
 <template>
 <div class="tagslist row grey lighten-3 z-depth-5">
+  <div class="powerby" >Github Info :</div>
+  <!-- <div id="githubinfo"> -->
+    <article id="githubinfo">
+      <dl class="user-data">
+        <dt>Avatar:</dt>
+        <dd class="user-avatar">
+          <img src="https://avatars3.githubusercontent.com/u/7686174?v=3">
+        </dd>
+        <!--dt>Fullname:</dt>
+        <dd class="user-name">chengxiang</dd> -->
+        <dt>Account:</dt>
+        <a class="user-github-url"><dd class="user-account">ZjuCx</dd></a>
+      </dl>
+      <dl class="user-stats">
+        <dt>Repos</dt>
+        <a class="user-repos-url"><dd class="user-repos" data-stats="repos">40</dd></a>
+
+        <dt>Followers</dt>
+        <a class="user-followers-url"><dd class="user-followers" data-stats="followers">20</dd></a>
+      </dl>
+    </article>
+  <!-- </div> -->
   <div class="powerby" >Tags Cloud :</div>
   <div id="tagsclound">
     <a v-for="item of items" :href="item.href" target="_blank">{{ item.tag }}</a>
@@ -64,10 +86,10 @@ export default {
   border-right: 2px solid #fff;
   // text-align: center;
   #tagsclound {
-    height:300px;
-    width:300px;
+    height:250px;
+    width:250px;
     position:relative;
-    // margin:10px auto;
+    margin-left:20px;
     a {
       position:absolute;
       top:0px;
@@ -85,6 +107,101 @@ export default {
         border-radius:5px;
       }
     }
+  }
+
+  #githubinfo {
+    font-family: "Helvetica", Arial, sans-serif;
+    display: inline-block;
+    width: 250px;
+    height: 280px;
+    overflow: hidden;
+    // border: 1px solid #D5D5D5;
+    border-radius: 6px;
+    position: relative;
+    // background-color: #2E353C;
+    text-align: center;
+    // color: #fff;
+    font-weight: 100;
+    transition: background 1000ms ease-out;
+    margin-left:25px;
+    dl,
+    dd {
+      margin: 0;
+      .user-avatar {
+        display: inline-block;
+        margin: 20px 0 10px;
+      }
+
+      .user-name,
+      .user-account {
+        margin: 5px 0;
+      }
+    }
+
+    dt {
+      display: none;
+    }
+
+    .user-data {
+      // background: #fff url('webcomponent/github.png') no-repeat 5px 5px;
+      background-size: 25px;
+      height: 85px;
+    }
+
+    .user-avatar img {
+      border-radius: 100%;
+      height: 120px;
+      width: 120px;
+      border: 3px solid #fff;
+      vertical-align: middle;
+      background-color: #fff;
+    }
+
+    .user-name {
+      font-size: 24px;
+    }
+
+    .user-account {
+      font-size: 16px;
+      color: #999;
+      margin: 5px 0;
+    }
+
+    .user-stats {
+      border-top: 1px groove #999;
+      position: relative;
+      top: 125px;
+    }
+
+    .user-stats {
+      dd {
+        padding: 10px 20px;
+      }
+    }
+
+    .user-repos,
+    .user-following,
+    .user-followers {
+      display: inline-block;
+      font-size: 22px;
+      color: #999;
+    }
+
+    .user-repos:after,
+    .user-following:after,
+    .user-followers:after {
+      content: attr(data-stats);
+      text-transform: uppercase;
+      display: block;
+      font-size: 11px;
+      color: #666;
+      font-weight: normal;
+      line-height: 1.7em;
+    }
+
+    // .spinner {
+    //   background: url('webcomponent/spinner.gif') no-repeat center center;
+    // }
   }
   .powerby {
       color: #616161;

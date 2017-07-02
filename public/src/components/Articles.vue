@@ -1,68 +1,37 @@
 <template>
 <div>
-  <div class='article' v-for="item in articles">
-  <!-- Page Layout here -->
-  <div class="powerby" >Trending on ZjuCx</div>
-  <!-- <el-row>
-    <el-col> -->
-      <!-- <el-card :body-style="{ padding: '14px' }"> -->
-      <div style="padding:14px;">
-        <div class="header">
-          <el-row :gutter="20">
-            <el-col :span="3">
-              <!-- <div class="cx-header"> -->
-                <img class="cx-header" src="../assets/logo.png">
-              <!-- </div> -->
-              <div style="padding-left:50px; padding-top:8px;font-size:16px;">zjucx</div>
-            </el-col>
-          </el-row>
-        </div>
-        <!-- <center> -->
-        <div class="content">
-          <h2 style="cursor:pointer;" v-on:click="loadArticle(item.Id)"><a href="/#/article">{{item.title}}</a></h2>
-          <!-- <img src="../assets/logo.png" class="image"> -->
-          <div v-html="content(item.summary)"></div>
-            <!-- {{ content(item.summary) }} -->
-        </div>
-        <!-- </center> -->
-        <div>
-          <div class="bottom clearfix">
-            <el-row :gutter="20">
-              <el-col :span="2">
-                <div class="cx-circle">
-                  <i class="fa fa-share-alt cx-fa" aria-hidden="true"></i>
-                </div>
-              </el-col>
+    <article class='posts' v-for="item in articles">
+      <div class="powerby">Trending on ZjuCx</div>
+      <ol class="post">
+          <li class="avatar">
+            <img src="https://avatars3.githubusercontent.com/u/7686174?v=3">
+          </li>
+          <li class="content">
+            <div class="abstract">
+            <span>
+              <p style="cursor:pointer;" v-on:click="loadArticle(item.Id)">
+                <a href="/#/article">{{item.title}}</a>
+              </p>
+            </span>
 
-              <el-col :span="2" :offset="2">
-                <div class="cx-circle">
+            <div v-html="content(item.summary)"></div>
+
+            <p class="mb-0 f6 text-gray">
+                <span><i class="fa fa-share-alt cx-fa" aria-hidden="true"></i></span>
+                JavaScript
+                <a href="/Mango/slideout/stargazers" class="pinned-repo-meta muted-link">
                   <i class="fa fa-comments cx-fa" aria-hidden="true"></i>
-                </div>
-                <div style="padding-left:40px; padding-top:8px;font-size: 12px;">32</div>
-              </el-col>
-              <el-col :span="2" :offset="1">
-                <div class="cx-circle">
+                  6.6k
+                </a>
+                <a href="/Mango/slideout/network" class="pinned-repo-meta muted-link">
                   <i class="fa fa-thumbs-up cx-fa" aria-hidden="true"></i>
-                </div>
-                <div style="padding-left:40px; padding-top:8px;font-size: 12px;">32</div>
-              </el-col>
-              <el-col :span="14" :offset="1">
-                <!-- <time class="time">{{ currentDate }}</time> -->
-                <!-- <div> -->
-                <i class="fa fa-tags cx-fa" aria-hidden="true">:</i>
-                <el-tag v-for="tag in item.tags">{{tag.name}}</el-tag>
-                <!-- <el-tag type="gray">Tag Two</el-tag>
-                <el-tag type="primary">Tag Three</el-tag> -->
-                <!-- <div> -->
-              </el-col>
-            </el-row>
+                  1.1k
+                </a>
+            </p>
           </div>
-        </div>
-      </div>
-       <!-- </el-card> -->
-    <!-- </el-col>
-  </el-row> -->
-</div>
+          </li>
+      </ol>
+    </article>
 </div>
 </template>
 
@@ -96,89 +65,107 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-.article{
+<style lang="sass" rel="stylesheet/scss">
+.posts {
   /*margin: 0 auto;*/
   /*text-align: left;*/
   width: 90%;
   /*text-align: center;*/
   border-bottom: 2px solid #fff;
+  .powerby {
+      color: #616161;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      padding: 14px 16px 6px;
+      text-align: left;
+  }
+  ol {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    list-style: none;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    li {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+    }
+    .avatar img{
+      width:200px;
+      height:200px;
+    }
+    .content {
+      min-width:350px;
+      width: 350px;
+      .abstract {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+    }
+  }
 }
-
-.powerby {
-    color: #616161;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    padding: 14px 16px 6px;
-    text-align: left;
-}
-.time {
-  font-size: 13px;
-  color: #999;
-}
-
-.header {
-  display: block;
-}
-
-.content {
-  padding: 20px 0 10px 30px;
-}
-
-.bottom {
-  margin-top: 13px;
-  line-height: 12px;
-}
-
-.button {
-  padding: 0;
-  float: right;
-}
-
-.image {
-  width: 200px;
-  display: block;
-  padding-left: 100px;
-}
-
-.clearfix:before,
-.clearfix:after {
-    display: table;
-    content: "";
-}
-
-.clearfix:after {
-    clear: both
-}
-
-.cx-header {
-  background: #fff;
-  display: block;
-  height: 36px;
-  width: 36px;
-  border-radius:50%;
-  position: absolute;;
-}
-
-.cx-circle {
-  background: #fff;
-  display: block;
-  height: 24px;
-  width: 24px;
-  border-radius:50%;
-  position: absolute;;
-}
-
-.cx-circle:hover {
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
-}
-
-.cx-fa {
-  padding-top: 4px;
-  padding-left: 4px;
-}
+//
+// .bottom {
+//   margin-top: 13px;
+//   line-height: 12px;
+// }
+//
+// .button {
+//   padding: 0;
+//   float: right;
+// }
+//
+// .image {
+//   width: 200px;
+//   display: block;
+//   padding-left: 100px;
+// }
+//
+// .clearfix:before,
+// .clearfix:after {
+//     display: table;
+//     content: "";
+// }
+//
+// .clearfix:after {
+//     clear: both
+// }
+//
+// .cx-header {
+//   background: #fff;
+//   display: block;
+//   height: 36px;
+//   width: 36px;
+//   border-radius:50%;
+//   position: absolute;;
+// }
+//
+// .cx-circle {
+//   background: #fff;
+//   display: block;
+//   height: 24px;
+//   width: 24px;
+//   border-radius:50%;
+//   position: absolute;;
+// }
+//
+// .cx-circle:hover {
+//   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+// }
+//
+// .cx-fa {
+//   padding-top: 4px;
+//   padding-left: 4px;
+// }
 
 </style>
