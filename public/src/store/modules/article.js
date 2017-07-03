@@ -2,7 +2,7 @@ import * as type from '../mutation-types'
 import Vue from 'vue'
 
 const state = {
-  articles: [{"title":"aa","tags":[
+  articles: [{"title":"ZjuCx博客","tags":[
         {
             "name" : "vuejs"
         },
@@ -12,7 +12,7 @@ const state = {
         {
             "name" : "blog"
         }
-    ],"summary":""}],
+    ],"summary":"ZjuCx博客系统"}],
   title: '',
   article: {"title":"aaa","tags":[],"article":"aaa"},
   tags: [],

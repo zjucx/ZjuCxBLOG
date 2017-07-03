@@ -8,28 +8,25 @@
           </li>
           <li class="content">
             <div class="abstract">
-            <span>
               <p style="cursor:pointer;" v-on:click="loadArticle(item.Id)">
-                <a href="/#/article">{{item.title}}</a>
+                  <a href="/#/article">{{item.title}}</a>
               </p>
-            </span>
 
-            <div v-html="content(item.summary)"></div>
+              <div class="summary" v-html="content(item.summary)">
+              </div>
 
-            <p class="mb-0 f6 text-gray">
-                <span><i class="fa fa-share-alt cx-fa" aria-hidden="true"></i></span>
-                JavaScript
-                <a href="/Mango/slideout/stargazers" class="pinned-repo-meta muted-link">
-                  <i class="fa fa-comments cx-fa" aria-hidden="true"></i>
-                  6.6k
-                </a>
-                <a href="/Mango/slideout/network" class="pinned-repo-meta muted-link">
-                  <i class="fa fa-thumbs-up cx-fa" aria-hidden="true"></i>
-                  1.1k
-                </a>
+              <p>
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+                <span>JavaScript</span>
+
+                <i class="fa fa-comments" aria-hidden="true"></i>
+                <span>6.6k</span>
+
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                <span>1.1k</span>
             </p>
           </div>
-          </li>
+        </li>
       </ol>
     </article>
 </div>
@@ -88,16 +85,15 @@ export default {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
+
     li {
       display: -webkit-box;
       display: -webkit-flex;
       display: flex;
     }
     .avatar img{
-      width:200px;
-      height:200px;
+      width:150px;
+      height:150px;
     }
     .content {
       min-width:350px;
@@ -110,62 +106,44 @@ export default {
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
         flex-direction: column;
+        flex-flow:left;
+        padding: 5px 20px;
+        font-size: 12px;
+        color: #999;
+        .summary {
+          height:70px;
+        }
+        span {
+          color: #000;
+          padding-right:20px;
+          word-wrap:break-word
+        }
+        a {
+          font-size: 18px;
+          padding: 2px 4px;
+          color: #42b983;
+          font-weight: 600 !important;
+          text-decoration: none;
+        }
+        p{
+          width:350px;
+          margin: 6px;
+          word-wrap:break-word
+        }
+        i {
+          font-size: 16px;
+          padding: 2px 4px;
+          background: #fff;
+          height: 16px;
+          width: 16px;
+          color: #000;
+          border-radius:50%;
+        }
+        i:hover {
+          box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+        }
       }
     }
   }
 }
-//
-// .bottom {
-//   margin-top: 13px;
-//   line-height: 12px;
-// }
-//
-// .button {
-//   padding: 0;
-//   float: right;
-// }
-//
-// .image {
-//   width: 200px;
-//   display: block;
-//   padding-left: 100px;
-// }
-//
-// .clearfix:before,
-// .clearfix:after {
-//     display: table;
-//     content: "";
-// }
-//
-// .clearfix:after {
-//     clear: both
-// }
-//
-// .cx-header {
-//   background: #fff;
-//   display: block;
-//   height: 36px;
-//   width: 36px;
-//   border-radius:50%;
-//   position: absolute;;
-// }
-//
-// .cx-circle {
-//   background: #fff;
-//   display: block;
-//   height: 24px;
-//   width: 24px;
-//   border-radius:50%;
-//   position: absolute;;
-// }
-//
-// .cx-circle:hover {
-//   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
-// }
-//
-// .cx-fa {
-//   padding-top: 4px;
-//   padding-left: 4px;
-// }
-
 </style>
