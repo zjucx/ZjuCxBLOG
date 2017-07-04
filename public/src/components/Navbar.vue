@@ -5,7 +5,7 @@
     <a href="/#/"><i class="fa fa-home fa-lg"></i></a>
   </el-tooltip>
   <el-tooltip class="item" effect="dark" content="Login" placement="left">
-  <a href="/#/login"><i class="fa fa-th fa-fw fa-lg"></i></a>
+  <a href="/#/catelogy"><i class="fa fa-th fa-fw fa-lg"></i></a>
   </el-tooltip>
   <el-tooltip class="item" effect="dark" content="Publish" placement="left">
   <a href="/#/edit"><i class="fa fa-pencil fa-fw fa-lg"></i></a>
@@ -14,7 +14,7 @@
   <a href="#"><i class="fa fa-mobile fa-fw fa-lg"></i></a>
   </div>
 <div class="nav-user">
-  <a href="#"><i class="fa fa-user fa-fw fa-lg"></i></a>
+  <a href="/#/login"><i class="fa fa-user fa-fw fa-lg"></i></a>
   <a href="#"><i class="fa fa-users fa-fw fa-lg"></i></a>
   <a href="#"><i class="fa fa-bell fa-fw fa-lg"></i></a>
   <a href="#"><i class="fa fa-bookmark fa-fw fa-lg"></i></a>

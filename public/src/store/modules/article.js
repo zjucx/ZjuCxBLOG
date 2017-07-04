@@ -2,29 +2,22 @@ import * as type from '../mutation-types'
 import Vue from 'vue'
 
 const state = {
-  articles: [{"title":"ZjuCx博客","tags":[
-        {
-            "name" : "vuejs"
-        },
-        {
-            "name" : "beego"
-        },
-        {
-            "name" : "blog"
-        }
-    ],"summary":"ZjuCx博客系统"}],
-  title: '',
-  article: {"title":"aaa","tags":[],"article":"aaa"},
+  articles: [{"title":"ZjuCx博客",
+              "tags":[{"name" : "vuejs"},{"name" : "beego"},{"name" : "blog"}],
+              "summary":"ZjuCx博客系统"},
+              {"title":"ZjuCx博客",
+              "tags":[{"name" : "vuejs"},{"name" : "beego"},{"name" : "blog"}],
+              "summary":"ZjuCx博客系统"}],
+  article: {"title":"","tags":[],"content":"","comments":[]},
   tags: [],
-  // time: '',
-  comments: [],
-  author: ''
+  userinfo: {"username":"","githubinfo":{},"tags":""}
 }
 
 // getters
 const getters = {
   article: state => state.article,
-  articles: state => state.articles
+  articles: state => state.articles,
+  userinfo: state => state.userinfo
 }
 
 const actions =  {
@@ -53,10 +46,6 @@ const actions =  {
       )
       // .finally(()=>commit('TOASTING_TOGGLE', false))
   },
-  // autoSave: ({commit}, article) => {
-  //   console.log(article)
-  //   commit('SET_ARTICLE', article)
-  // }
 }
 
 // 相关的 mutations

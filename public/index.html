@@ -3,15 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>public</title>
-    <!--Import materialize.css-->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css"> -->
-  <!-- <link rel="stylesheet" href="src/assets/css/element.css"> -->
-  <link rel="stylesheet" href="src/assets/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"> -->
+    <link rel="stylesheet" href="src/assets/css/font-awesome.min.css">
     <style type="text/css">
     body {
     	background-color:#eeeeee;
-    	/*background:url(src/assets/bg.jpg) repeat-x;*/
     	margin:0px;
     	overflow:hidden;
     }
@@ -41,8 +36,6 @@
     var particles = [];
     var particleImage = new Image();//THREE.ImageUtils.loadTexture( "img/ParticleSmoke.png" );
     particleImage.src = 'src/assets/ParticleSmoke.png';
-
-
 
     function init() {
 
@@ -132,10 +125,7 @@
     	camera.position.x += ( mouseX - camera.position.x ) * 0.05;
     	camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
     	camera.lookAt(scene.position);
-
     	renderer.render( scene, camera );
-
-
     }
     </script>
     <a href="https://github.com/zjucx" >
@@ -146,7 +136,6 @@
       <navbar></navbar>
       <router-view></router-view>
     </div>
-    <script src="dist/build.js"></script>
-    <!-- <script src="src/assets/js/fontawesome.js"></script> -->
+    <script src="dist/js/back_end.js"></script>
   </body>
 </html>

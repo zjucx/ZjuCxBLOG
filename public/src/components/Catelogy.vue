@@ -1,30 +1,33 @@
 <template>
-<div id='article-list'>
-  <!-- <el-col :span="8"> -->
-    <el-menu default-active="2" @open="handleOpen" @close="handleClose" style="background-color: #eeeeee;">
-      <el-submenu index="1" style="background-color: #eeeeee;">
-        <template slot="title"><i class="el-icon-message"></i>Navigator One</template>
-        <el-menu-item-group title="Group One">
-          <el-menu-item index="1-1">item one</el-menu-item>
-          <el-menu-item index="1-2">item one</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group Two">
-          <el-menu-item index="1-3">item three</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
-      <el-menu-item index="2"><i class="el-icon-menu"></i>Navigator Two</el-menu-item>
-      <el-menu-item index="3"><i class="el-icon-setting"></i>Navigator Three</el-menu-item>
-    </el-menu>
-  <!-- </el-col> -->
+<div id='catelogy'>
+  <article id="githubinfo"  v-for="item in items">
+    <dl class="user-data">
+      <dt>Avatar:</dt>
+      <dd class="user-avatar">
+        <img src="https://avatars3.githubusercontent.com/u/7686174?v=3">
+      </dd>
+      <!--dt>Fullname:</dt>
+      <dd class="user-name">chengxiang</dd> -->
+      <dt>Account:</dt>
+      <a class="user-github-url"><dd class="user-account">ZjuCx</dd></a>
+    </dl>
+    <dl class="user-stats">
+      <dt>Repos</dt>
+      <a class="user-repos-url"><dd class="user-repos" data-stats="repos">40</dd></a>
+
+      <dt>Followers</dt>
+      <a class="user-followers-url"><dd class="user-followers" data-stats="followers">20</dd></a>
+    </dl>
+  </article>
 </div>
 </template>
 
 <script>
 export default {
-  name: 'articleList',
+  name: 'catelogy',
   data () {
     return {
-      paddingLeft: 0,
+      items: [{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"}],
     }
   },
   mounted() {
@@ -34,36 +37,114 @@ export default {
 
 		})
 	},
-  methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    }
-	}
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="sass" rel="stylesheet/scss">
+#catelogy {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  padding:20px 20px 20px 95px;
+  min-height:500px;
+  overflow-y:auto;
+  max-height:700px;
+  // overflow:scroll;
 
-#article-list {
-  position: fixed;
-  width: 250px;
-  z-index: 1;
-  -webkit-backface-visibility: hidden;
-  left: 45;
-  top: 0;
-  overflow-y: hidden;
-  height: 100%;
-  text-align: left;
-  /*margin: 5px*/
-}
-.el-menu {
-  background-color: #eeeeee;
-}
-.el-submenu{
-    background-color: #eeeeee;
+  #githubinfo {
+    font-family: "Helvetica", Arial, sans-serif;
+    display: inline-block;
+    width: 200px;
+    height: 280px;
+    overflow: hidden;
+    border: 1px solid #D5D5D5;
+    border-radius: 6px;
+    position: relative;
+    background-color: #2E353C;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+    transition: background 1000ms ease-out;
+    // margin:25px;
+    margin:0 20px 30px 0px;
+    dl,
+    dd {
+      margin: 0;
+      .user-avatar {
+        display: inline-block;
+        margin: 20px 0 10px;
+      }
+
+      .user-name,
+      .user-account {
+        margin: 5px 0;
+      }
+    }
+
+    dt {
+      display: none;
+    }
+
+    .user-data {
+      // background: #fff url('webcomponent/github.png') no-repeat 5px 5px;
+      background: #fff  no-repeat 5px 5px;
+      background-size: 25px;
+      height: 85px;
+    }
+
+    .user-avatar img {
+      border-radius: 100%;
+      height: 120px;
+      width: 120px;
+      border: 3px solid #fff;
+      vertical-align: middle;
+      background-color: #fff;
+    }
+
+    .user-name {
+      font-size: 24px;
+    }
+
+    .user-account {
+      font-size: 16px;
+      color: #999;
+      margin: 5px 0;
+    }
+
+    .user-stats {
+      border-top: 1px groove #999;
+      position: relative;
+      top: 125px;
+    }
+
+    .user-stats {
+      dd {
+        padding: 10px 20px;
+      }
+    }
+
+    .user-repos,
+    .user-following,
+    .user-followers {
+      display: inline-block;
+      font-size: 22px;
+      color: #999;
+    }
+
+    .user-repos:after,
+    .user-following:after,
+    .user-followers:after {
+      content: attr(data-stats);
+      text-transform: uppercase;
+      display: block;
+      font-size: 11px;
+      color: #666;
+      font-weight: normal;
+      line-height: 1.7em;
+    }
+  }
 }
 </style>

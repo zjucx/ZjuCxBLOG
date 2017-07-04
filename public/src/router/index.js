@@ -7,6 +7,7 @@ import ArticlesPage from '../components/ArticlesPage.vue'
 import ArticlePage from '../components/ArticlePage.vue'
 import EditPage from '../components/EditPage.vue'
 import Login from '../components/Login.vue'
+import Catelogy from '../components/Catelogy.vue'
 
 // Vue.use(VueRouter)
 
@@ -35,6 +36,7 @@ export default new Router({
     {path: '/login', component: Login},
     {path: '/article', component: ArticlePage},
     {path: '/articles', component: ArticlesPage},
+    {path: '/catelogy', component: Catelogy},
     {
       path: '/console',
       component: ArticlesPage,

@@ -131,23 +131,19 @@ export default {
         display: inline-block;
         margin: 20px 0 10px;
       }
-
       .user-name,
       .user-account {
         margin: 5px 0;
       }
     }
-
     dt {
       display: none;
     }
-
     .user-data {
       // background: #fff url('webcomponent/github.png') no-repeat 5px 5px;
       background-size: 25px;
       height: 85px;
     }
-
     .user-avatar img {
       border-radius: 100%;
       height: 120px;
@@ -160,25 +156,21 @@ export default {
     .user-name {
       font-size: 24px;
     }
-
     .user-account {
       font-size: 16px;
       color: #999;
       margin: 5px 0;
     }
-
     .user-stats {
       border-top: 1px groove #999;
       position: relative;
       top: 125px;
     }
-
     .user-stats {
       dd {
         padding: 10px 20px;
       }
     }
-
     .user-repos,
     .user-following,
     .user-followers {
@@ -186,7 +178,6 @@ export default {
       font-size: 22px;
       color: #999;
     }
-
     .user-repos:after,
     .user-following:after,
     .user-followers:after {
@@ -198,7 +189,6 @@ export default {
       font-weight: normal;
       line-height: 1.7em;
     }
-
     // .spinner {
     //   background: url('webcomponent/spinner.gif') no-repeat center center;
     // }
