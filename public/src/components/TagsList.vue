@@ -83,7 +83,7 @@ export default {
   left: 45px;
   top: 0;
   height: 100%;
-  border-right: 2px solid #fff;
+  // border-right: 2px solid #fff;
   // text-align: center;
   #tagsclound {
     height:250px;

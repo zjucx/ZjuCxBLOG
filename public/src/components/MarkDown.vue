@@ -1,6 +1,6 @@
 <template>
 <div id='markdown'>
-  <mavon-editor style="height: 100%"></mavon-editor>
+  <mavon-editor :value="value" style="height: 100%"></mavon-editor>
 </div>
 </template>
 

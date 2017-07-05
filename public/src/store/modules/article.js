@@ -8,7 +8,7 @@ const state = {
               {"title":"ZjuCx博客",
               "tags":[{"name" : "vuejs"},{"name" : "beego"},{"name" : "blog"}],
               "summary":"ZjuCx博客系统"}],
-  article: {"title":"","tags":[],"content":"","comments":[]},
+  article: {"title":"aa","tags":[],"content":"aaaaaa","comments":[]},
   tags: [],
   userinfo: {"username":"","githubinfo":{},"tags":""}
 }
