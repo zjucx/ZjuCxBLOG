@@ -1,7 +1,7 @@
 <template>
 <div class='article'>
   <!-- Page Layout here -->
-  <div style="padding:0 14px 14px 14px;">
+  <div style="padding:0 14px 14px 14px;border-bottom: 2px solid #ffffff;">
     <article style="padding: 0 0 10px 30px;">
       <div v-html="content(article.content)"></div>
     </article>
@@ -90,7 +90,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass" rel="stylesheet/scss">
 .article {
-  //
+  padding-left: 20px;
   .comments{
     position: relative;
     width: 90%;
