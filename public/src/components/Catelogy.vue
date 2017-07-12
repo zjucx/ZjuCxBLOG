@@ -63,7 +63,7 @@ export default {
     border: 1px solid #D5D5D5;
     border-radius: 6px;
     position: relative;
-    background-color: #2E353C;
+    background-color: rgba(0, 0, 0, 0.1);
     text-align: center;
     color: #fff;
     font-weight: 100;
@@ -90,7 +90,7 @@ export default {
 
     .user-data {
       // background: #fff url('webcomponent/github.png') no-repeat 5px 5px;
-      background: #fff  no-repeat 5px 5px;
+      background: #2a2a2a  no-repeat 5px 5px;
       background-size: 25px;
       height: 85px;
     }
