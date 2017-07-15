@@ -9,6 +9,7 @@ import EditPage from '../components/EditPage.vue'
 import Login from '../components/Login.vue'
 import Catelogy from '../components/Catelogy.vue'
 import ResumePage from '../components/ResumePage.vue'
+import Search from '../components/Search.vue'
 
 // Vue.use(VueRouter)
 
@@ -39,6 +40,7 @@ export default new Router({
     {path: '/articles', component: ArticlesPage},
     {path: '/catelogy', component: Catelogy},
     {path: '/resume', component: ResumePage},
+    {path: '/search', component: Search},
     {
       path: '/console',
       component: ArticlesPage,

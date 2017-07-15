@@ -1,18 +1,18 @@
 <template>
 <div>
-    <article class='posts' v-for="item in articles">
+    <article class='posts' v-for="article in articles">
       <div class="powerby">Trending on ZjuCx</div>
       <ol class="post">
-          <li class="avatar">
-            <img src="https://avatars3.githubusercontent.com/u/7686174?v=3">
+          <li class="thumbnail">
+            <img :src="article.thumbnail">
           </li>
           <li class="content">
             <div class="abstract">
-              <p style="cursor:pointer;" v-on:click="loadArticle(item.Id)">
-                  <a href="/#/article">{{item.title}}</a>
+              <p style="cursor:pointer;" v-on:click="loadArticle(article.Id)">
+                  <a href="/#/article" v-text="article.title"></a>
               </p>
 
-              <div class="summary" v-html="content(item.summary)">
+              <div class="summary" v-html="content(article.summary)">
               </div>
 
               <p>
@@ -34,6 +34,7 @@
 
 <script>
 import {mapState, mapActions, mapMutations} from 'vuex'
+import marked from 'marked'
 
 export default {
   name: 'Articles',
@@ -90,7 +91,7 @@ export default {
       display: -webkit-flex;
       display: flex;
     }
-    .avatar img{
+    .thumbnail img{
       width:150px;
       height:150px;
     }

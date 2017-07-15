@@ -10,7 +10,7 @@
   <el-tooltip class="item" effect="dark" content="Publish" placement="left">
   <a href="/#/edit"><i class="fa fa-pencil fa-fw fa-lg"></i></a>
   </el-tooltip>
-  <a href="#"><i class="fa fa-search fa-fw fa-lg"></i></a>
+  <a href="/#/search"><i class="fa fa-search fa-fw fa-lg"></i></a>
   <a href="#"><i class="fa fa-mobile fa-fw fa-lg"></i></a>
   </div>
 <div class="nav-user">

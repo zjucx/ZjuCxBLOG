@@ -2,22 +2,75 @@ import * as type from '../mutation-types'
 import Vue from 'vue'
 
 const state = {
-  articles: [{"title":"ZjuCx博客",
-              "tags":[{"name" : "vuejs"},{"name" : "beego"},{"name" : "blog"}],
-              "summary":"ZjuCx博客系统"},
-              {"title":"ZjuCx博客",
-              "tags":[{"name" : "vuejs"},{"name" : "beego"},{"name" : "blog"}],
-              "summary":"ZjuCx博客系统"}],
-  article: {"title":"aa","tags":[],"content":"aaaaaa","comments":[]},
-  tags: [],
-  userinfo: {"username":"","githubinfo":{},"tags":""}
+  articles: [{
+    'title':'ZjuCx博客',
+    'tags':[{'name' : 'vuejs'},{'name' : 'beego'},{'name' : 'blog'}],
+    'summary':'ZjuCx博客系统',
+    'thumbnail': 'https://avatars3.githubusercontent.com/u/7686174?v=3',
+    'author': 'zjucx',
+    'time': 1990-12-12,
+    'language': 'javascript',
+    'like': 20,
+    'remark': 40,
+  },{
+    'title':'ZjuCx博客',
+    'tags':[{'name' : 'vuejs'},{'name' : 'beego'},{'name' : 'blog'}],
+    'summary':'ZjuCx博客系统',
+    'thumbnail': 'https://avatars3.githubusercontent.com/u/7686174?v=3',
+    'author': 'zjucx',
+    'time': 1990-12-12,
+    'language': 'javascript',
+    'like': 20,
+    'remark': 40,
+  }],
+  article: {
+    'title':'aa',
+    'tags':[],
+    'content':'aaaaaa',
+    'comments':[{
+        'type': 'normal',
+        'content': 'aaaa',
+        'auther': 'zjucx',
+        'avatar': 'https://avatars3.githubusercontent.com/u/7686174?v=3',
+        'time': '1990-12-12'
+      },{
+        'type': 'normal',
+        'content': 'aaaa',
+        'auther': 'zjucx',
+        'avatar': 'https://avatars3.githubusercontent.com/u/7686174?v=3',
+        'time': '1990-12-12'
+      },{
+        'type': 'normal',
+        'content': 'aaaa',
+        'auther': 'zjucx',
+        'avatar': 'https://avatars3.githubusercontent.com/u/7686174?v=3',
+        'time': '1990-12-12'
+      },{
+        'type': 'normal',
+        'content': 'aaaa',
+        'auther': 'zjucx',
+        'avatar': 'https://avatars3.githubusercontent.com/u/7686174?v=3',
+        'time': '1990-12-12'
+      },{
+        'type': 'normal',
+        'content': 'aaaa',
+        'auther': 'zjucx',
+        'avatar': 'https://avatars3.githubusercontent.com/u/7686174?v=3',
+        'time': '1990-12-12'
+      },{
+        'type': 'normal',
+        'content': 'aaaa',
+        'auther': 'zjucx',
+        'avatar': 'https://avatars3.githubusercontent.com/u/7686174?v=3',
+        'time': '1990-12-12'
+      }
+    ]},
 }
 
 // getters
 const getters = {
   article: state => state.article,
-  articles: state => state.articles,
-  userinfo: state => state.userinfo
+  articles: state => state.articles
 }
 
 const actions =  {

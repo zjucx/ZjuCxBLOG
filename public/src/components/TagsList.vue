@@ -1,5 +1,5 @@
 <template>
-<div class="tagslist row grey lighten-3 z-depth-5">
+<div class="tagslist">
   <div class="powerby" >Github Info :</div>
   <!-- <div id="githubinfo"> -->
     <article id="githubinfo">

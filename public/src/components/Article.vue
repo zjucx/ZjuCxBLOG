@@ -7,23 +7,23 @@
     </article>
   </div>
   <div class="comments">
-  <div class="comment" v-for="item in items">
+  <div class="comment" v-for="comment in comments">
     <div class="avatar">
-      <img height="44" src="https://avatars2.githubusercontent.com/u/4371429?v=3&amp;s=88" width="44">
+      <img height="44" :src="comment.avatar" width="44">
     </div>
     <div class="editor">
       <div class="comment-header">
         <h3 class="comment-header-text">
           <strong>
-              <a href="/ktsn" class="author">ktsn</a>
+              <a href="/ktsn" v-text="comment.auther"></a>
           </strong>
           commented
-          <a href="" class="timestamp">on May 24</a>
+          <a href="" v-text="comment.time"></a>
         </h3>
 
       </div>
       <div class="comment-content">
-        <div v-html="content(article.content)"></div>
+        <div v-html="content(comment.content)"></div>
       </div>
 
     </div>
@@ -77,6 +77,7 @@ export default {
   computed: {
     ...mapState({
       article: state => state.article.article,
+      comments: state => state.article.article.comments,
     }),
   },
   methods: {
