@@ -4,8 +4,38 @@ import * as types from '../mutation-types'
 
 // 该模块的初始状态
 const state = {
-  userInfo: '',
-  isLogin: false
+  userInfo: {
+    'name': 'ZjuCx',
+    'company': 'HUAWEI Research Institute of Hangzhou',
+    'introduce': 'A Product Designer/Full-Stack Engineer who builds things to make the world a better place. I grow products from idea to happy, sustainable teams.',
+    'location': 'Hangzhou',
+    'avatar': 'https://avatars3.githubusercontent.com/u/7686174?v=3'
+  },
+  isLogin: false,
+  resume: {
+    'events': [{
+      'begintime': '',
+      'endtime': '',
+      'event': '',
+      'keyword': '',
+      'where': '',
+      'type': ''
+    },{
+      'begintime': '',
+      'endtime': '',
+      'event': '',
+      'keyword': '',
+      'where': '',
+      'type': ''
+    },{
+      'begintime': '',
+      'endtime': '',
+      'event': '',
+      'keyword': '',
+      'where': '',
+      'type': ''
+    },]
+  },
 }
 
 // getters

@@ -1,6 +1,6 @@
 <template>
 <div id="app" class="grey lighten-3">
-  <tagsList></tagsList>
+  <profile></profile>
   <!-- Page Layout here -->
   <div class="content" v-bind:style="style">
     <!-- Grey navigation panel -->
@@ -11,7 +11,7 @@
 
 <script>
 import Resume from './Resume.vue'
-import TagsList from './TagsList.vue'
+import Profile from './Profile.vue'
 export default {
   name: 'resumePage',
   data () {
@@ -21,7 +21,7 @@ export default {
   },
   components: {
     resume: Resume,
-    tagsList: TagsList
+    profile: Profile
   },
   mounted() {
 		// this.$nextTick(function() {
@@ -60,9 +60,6 @@ export default {
   top: 0;
   height: 100%;
   overflow-y: auto;
-}
-.content.row {
-    padding-top: 20px;
-    margin-left: 250px;
+  overflow-x: hidden;
 }
 </style>

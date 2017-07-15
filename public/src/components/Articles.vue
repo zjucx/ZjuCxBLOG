@@ -34,7 +34,6 @@
 
 <script>
 import {mapState, mapActions, mapMutations} from 'vuex'
-import marked from 'marked'
 
 export default {
   name: 'Articles',
