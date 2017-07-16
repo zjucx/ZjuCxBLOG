@@ -1,4 +1,5 @@
 import * as types from './mutation-types'
+import axios from 'axios'
 
 // export default {
 //   saveArticle: ({state, commit}) => {
@@ -11,10 +12,12 @@ import * as types from './mutation-types'
 //   }
 // }
 //
-// export const saveArticle = ({ commit }, article) => {
-//   if (product.inventory > 0) {
-//     commit(types.SET_USER, {
-//       // id: product.id
-//     })
-//   }
-// }
+export const search = ({ commit }, searchstr) => {
+  return axios.post('/search', {
+    search: searchstr
+  }).then(function (response) {
+    console.log(response);
+  }).catch(function (error) {
+    console.log(error);
+  });
+}

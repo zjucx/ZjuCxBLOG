@@ -1,6 +1,9 @@
 <template>
 <div id='markdown'>
-  <mavon-editor :value="value" style="height: 100%"></mavon-editor>
+  <div class="publish" @click="publish">
+    <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>
+  </div>
+  <mavon-editor :value="value" style="height: 100%" @change="change"></mavon-editor>
 </div>
 </template>
 
@@ -13,7 +16,52 @@ export default {
    name: 'editor',
    components: {
        'mavon-editor': mavonEditor.mavonEditor
-   }
+   },
+   data() {
+     return {
+       value: '',
+       reder: '',
+     }
+   },
+   methods: {
+        $imgAdd(pos, $file){
+            this.img_file[pos] = $file;
+        },
+        $imgDel(pos){
+            delete this.img_file[pos];
+        },
+        uploadimg($e){
+            // upload files in one request.
+            console.log(this.img_file);
+            var formdata = new FormData();
+            for(var _img in this.img_file){
+                formdata.append(_img, this.img_file[_img]);
+            }
+            axios({
+                url: 'http://127.0.0.1/index.php',
+                method: 'post',
+                data: formdata,
+                headers: { 'Content-Type': 'multipart/form-data' },
+            }).then((res) => {
+                console.log(res)
+            })
+        },
+        change(value, reder) {
+          this.value = value
+          this.reder = reder
+          console.log(value + reder)
+        },
+        publish() {
+          this.$store.dispatch('publish', {
+            'value': this.value,
+            'reder': this.reder
+          }).then(() => {
+            console.log('publish success')
+          }).catch(() => {
+            console.log('publish faild')
+          })
+        }
+    }
 }
 </script>
 <style lang="sass" rel="stylesheet/scss">
@@ -22,5 +70,19 @@ export default {
    margin: auto;
    width: 100%;
    height: 700px;
+   .publish {
+     z-index: 99999;
+     bottom: 100px;
+     width: 48px;
+     height: 48px;
+     border: 4px solid rgb(189, 255, 242);
+     border-radius: 48px;
+     position: absolute;
+     right: 100px;
+     background-color: #16a085!important;
+     i {
+       padding: 8px 0 0 6px;
+     }
+   }
 }
 </style>

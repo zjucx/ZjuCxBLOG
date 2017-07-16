@@ -8,7 +8,7 @@
         <!-- <i class="fa fa-search fa-2x"></i> -->
         <input id="search"
                type="text"
-               v-model.trim="search"
+               v-model.trim="searchstr"
         >
       </p>
       <p class="info" v-text="info"></p>
@@ -20,38 +20,37 @@
     </div>
   </section>
 </template>
+
 <script>
-  // import {mapActions} from 'vuex'
-  // import {get, set}  from '../../assets/js/cookieUtil'
+import {mapActions} from 'vuex'
 
-  export default{
-    data(){
-      return {
-        search: '',
-        info: ''
-      }
-    },
-    methods: {
-      doSearch(){
-        if (!this.search.length) return this.info = '请输入搜索内容'
-
-        this.search({search: this.search})
-          .then(() => {
-            const date = new Date(Date.now() + 60000 * 30)
-            set('user', this.search, date, '/', location.hostsearch)
-            this.$router.push({path: '/console'})
-          })
-          .catch(msg => this.info = msg)
-      },
-      clearInfo(){
-        this.info = ''
-      },
-      // ...mapActions(['search'])
-    },
-    watch: {
-      search: 'clearInfo',
+export default{
+  data(){
+    return {
+      searchstr: '',
+      info: ''
     }
+  },
+  methods: {
+    doSearch(){
+      if (!this.searchstr.length) return this.info = '请输入搜索内容'
+
+      this.search(this.searchstr).then(
+        () => {
+          this.$router.push({path: '/console'})
+        }).catch(
+          msg => this.info = msg
+        )
+    },
+    clearInfo(){
+      this.info = ''
+    },
+    ...mapActions(['search'])
+  },
+  watch: {
+    searchstr: 'clearInfo',
   }
+}
 </script>
 <style lang="sass" rel="stylesheet/scss">
 @import "../assets/style/variables";

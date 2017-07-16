@@ -8,8 +8,8 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "cropper": "^2.3.4",
-    "d3-timelines": "^1.2.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "mavon-editor": "^2.1.1",
     "sass": "^0.5.0",
@@ -32,7 +32,6 @@
     "marked": "^0.3.6",
     "mongoose": "^4.6.8",
     "node-sass": "^4.1.1",
-    "simplemde": "^1.11.2",
     "style-loader": "^0.13.1",
     "vue-html-loader": "^1.2.3",
     "vue-loader": "^9.7.0",

@@ -75,29 +75,47 @@ const getters = {
 
 const actions =  {
   getArticles: ({commit}) => {
-    return Vue.http.get('article/getArticles')
-      .then(response=> {
-        // stopLoading(commit, start)
+    return axios.get('/articles').then(
+      function (response) {
         commit('SET_ARTICLES', response.data)
+        console.log(response);
+      }).catch(
+        function (error) {
+          console.log(error);
       })
   },
   getArticle: ({commit}, id) => {
-    return Vue.http.get('/article/getArticle/'+id)
-      .then(response=> {
-        // stopLoading(commit, start)
-        commit('SET_ARTICLE', response.data)
-      })
+    return axios.get('/article', {
+      params: {
+        ID: id
+      }
+    }).then(function (response) {
+      commit('SET_ARTICLE', response.data)
+      console.log(response);
+    }).catch(function (error) {
+      console.log(error);
+    })
   },
-  saveArticle: ({state, commit}, article) => {
-    commit('SET_ARTICLE', article.article)
-    commit('SET_TITLE', article.title)
-    commit('SET_TAGS', article.tags)
-    return Vue.http.post('/article/saveArticle', state)
-      .then(
-        ()=>doToast(state, commit, {info: '保存成功,是否返回?', btnNum: 2}),
-        ()=>doToast(state, commit, {info: '保存失败', btnNum: 1})
-      )
-      // .finally(()=>commit('TOASTING_TOGGLE', false))
+  publish: ({commit}, article) => {
+    return axios.get('/publish', {
+      params: {
+        article: article
+      }
+    }).then(function (response) {
+      commit('SET_ARTICLE', response.data)
+      console.log(response);
+    }).catch(function (error) {
+      console.log(error);
+    })
+    // commit('SET_ARTICLE', article.article)
+    // commit('SET_TITLE', article.title)
+    // commit('SET_TAGS', article.tags)
+    // return Vue.http.post('/article/saveArticle', state)
+    //   .then(
+    //     ()=>doToast(state, commit, {info: '保存成功,是否返回?', btnNum: 2}),
+    //     ()=>doToast(state, commit, {info: '保存失败', btnNum: 1})
+    //   )
+    //   // .finally(()=>commit('TOASTING_TOGGLE', false))
   },
 }
 

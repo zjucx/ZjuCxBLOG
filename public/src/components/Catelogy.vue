@@ -30,13 +30,6 @@ export default {
       items: [{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"},{"a":"a"}],
     }
   },
-  mounted() {
-		this.$nextTick(function() {
-				// window.addEventListener('resize', this.getWindowWidth);
-        // this.getWindowWidth()
-
-		})
-	},
 }
 </script>
 
