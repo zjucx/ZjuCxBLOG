@@ -10,10 +10,11 @@ Personal Blog using BeeGo and VueJS（二）
 1)创建vue-cli创建webpack工程
   参考链接: http://cn.vuejs.org/v2/guide/
 2)调试工程
-  npm install
-  npm run dev
+  npm install -g cnpm --registry=https://registry.npm.taobao.org
+  cnpm install
+  cnpm run dev
 3)打包前端工程
-  npm run build
+  cnpm run build
 4)部署前端工程到beego框架
   cp -r dist/* ../view/dist
 ```
