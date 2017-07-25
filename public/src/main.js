@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueResource from 'vue-resource'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
-import NavBar from './components/NavBar.vue'
+import Navbar from './components/Navbar.vue'
 
 import router from './router'
 import store from './store'
@@ -16,7 +16,7 @@ const app = new Vue({
   router,
   store,
   components: {
-    navbar: NavBar,
+    navbar: Navbar,
   }
   // render: h => h(App)
 }).$mount('#app')
