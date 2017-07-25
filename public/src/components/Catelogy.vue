@@ -43,7 +43,7 @@ export default {
   // justify-content: space-between;
   padding:20px 20px 20px 95px;
   min-height:500px;
-  overflow-y:auto;
+  // overflow-y:auto;
   max-height:700px;
   // overflow:scroll;
 
