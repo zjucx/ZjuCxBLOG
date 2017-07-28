@@ -23,7 +23,7 @@
     <dl class="user-data">
       <dt>Avatar:</dt>
       <dd class="user-avatar">
-        <img src="../assets/add.png">
+        <img src="../assets/img/add.png">
       </dd>
       <!--dt>Fullname:</dt>
       <dd class="user-name">chengxiang</dd> -->

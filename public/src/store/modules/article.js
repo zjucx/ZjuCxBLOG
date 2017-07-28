@@ -1,5 +1,6 @@
 import * as type from '../mutation-types'
 import Vue from 'vue'
+import axios from 'axios'
 
 const state = {
   articles: [{
@@ -65,6 +66,7 @@ const state = {
         'time': '1990-12-12'
       }
     ]},
+    toggle: false,
 }
 
 // getters
@@ -96,16 +98,22 @@ const actions =  {
       console.log(error);
     })
   },
-  publish: ({commit}, article) => {
-    return axios.get('/publish', {
-      params: {
-        article: article
+  publish: ({commit}, artcl) => {
+    console.log(artcl);
+
+    return axios({
+      method: 'post',
+      url: '/publish',
+      data: {
+        article: artcl.reder,
+        user: artcl.user
       }
     }).then(function (response) {
-      commit('SET_ARTICLE', response.data)
       console.log(response);
+      commit('SET_TOGGLE', true)
     }).catch(function (error) {
       console.log(error);
+      commit('SET_TOGGLE', true)
     })
     // commit('SET_ARTICLE', article.article)
     // commit('SET_TITLE', article.title)
@@ -132,6 +140,9 @@ const mutations = {
   },
   [type.SET_ARTICLES] (state, articles) {
     state.articles = articles
+  },
+  [type.SET_TOGGLE] (state, para) {
+    state.toggle = para
   },
 }
 

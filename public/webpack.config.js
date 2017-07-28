@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var lang = require('highlight.js-async-webpack/src/file.lang.hljs.js');
 var _entry= {
-    back_end: './src/main.js', // 原始入口
+    main: './src/main.js', // 原始入口
     vue: ['vue']
 };
 for (var i = 0; i < lang.length; i++) {
@@ -15,7 +15,7 @@ module.exports = {
   entry: _entry,
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: '/dist',
     filename: 'js/[name].js',
     // filename: 'build.js'
   },
