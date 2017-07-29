@@ -3,19 +3,20 @@
   <div class="publish" @click="publish">
     <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>
   </div>
+  <input class="title" name="note_name" type="text" placeholder="title">
   <mavon :value="value" style="height: 100%" @change="change"></mavon>
 </div>
 </template>
 
 <script>
 import {mapState, mapActions, mapMutations} from 'vuex'
-
-var mavonEditor = require('mavon-editor')
+import { mavonEditor } from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 
 export default {
    name: 'editor',
    components: {
-       'mavon': mavonEditor.mavonEditor
+       'mavon': mavonEditor
    },
    data() {
      return {
@@ -79,6 +80,18 @@ export default {
    margin: auto;
    width: 100%;
    height: 700px;
+   overflow-y: hidden;
+   .title {
+      position: relative;
+      width: 100%;
+      padding: 10px 30px 10px 40px;
+      font-size: 30px;
+      height: 50px;
+      border: none;
+      box-sizing: border-box;
+      z-index: 1500;
+      outline: none;
+   }
    .publish {
      z-index: 99999;
      bottom: 100px;
